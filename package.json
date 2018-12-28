@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "rather",
   "version": "0.1.0",
-  "description": "",
+  "description": "It's a friggin game.",
   "private": true,
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+your repo here"
+    "url": "git+https://github.com/cosmicfilament/Rather.git"
   },
   "keywords": [
     "react",
@@ -24,7 +24,7 @@
   "author": "John P. Butler",
   "license": "MIT",
   "bugs": {
-    "url": "your repo here"
+    "url": "https://github.com/cosmicfilament/Rather.git"
   },
   "homepage": ".",
   "jest": {
@@ -52,7 +52,6 @@
     "imagemin": "^5.3.1",
     "img-loader": "^3.0.1",
     "jest": "^23.6.0",
-    "node-sass": "^4.11.0",
     "optipng": "^2.0.0",
     "react-hot-loader": "^4.5.3",
     "react-test-renderer": "^16.7.0",
@@ -69,8 +68,11 @@
     "chalk": "^2.4.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-icons": "^3.2.2",
     "react-redux": "^6.0.0",
+    "react-redux-loading-bar": "^4.1.0",
     "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
   }

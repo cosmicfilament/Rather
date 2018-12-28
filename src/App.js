@@ -6,7 +6,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <h1>React Redux Boilerplate</h1>
+                <h1>Would You Rather?</h1>
             </div>
         );
     }
