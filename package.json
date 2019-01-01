@@ -7,8 +7,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "webpack-dev-server --mode=development --env.dev",
-    "prod": "webpack --mode=production --env.prod",
-    "test": "jest ./test"
+    "prod": "webpack --mode=production --env.prod"
   },
   "repository": {
     "type": "git",
@@ -26,10 +25,6 @@
   "bugs": {
     "url": "https://github.com/cosmicfilament/Rather.git"
   },
-  "homepage": ".",
-  "jest": {
-    "setupTestboilerplateScriptFile": "./test/enzyme.setup.js"
-  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
@@ -40,10 +35,9 @@
     "@babel/runtime": "^7.2.0",
     "acorn": "^6.0.4",
     "babel-loader": "^8.0.4",
+    "babel-plugin-styled-components": "^1.10.0",
     "clean-webpack-plugin": "^1.0.0",
     "css-loader": "^2.0.2",
-    "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.7.1",
     "eslint": "^5.10.0",
     "eslint-plugin-flowtype": "^3.2.0",
     "file-loader": "^3.0.1",
@@ -51,21 +45,23 @@
     "html-webpack-plugin": "^3.2.0",
     "imagemin": "^5.3.1",
     "img-loader": "^3.0.1",
-    "jest": "^23.6.0",
+    "node-sass": "^4.11.0",
     "optipng": "^2.0.0",
     "react-hot-loader": "^4.5.3",
-    "react-test-renderer": "^16.7.0",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.1.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.28.1",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.11",
+    "webpack-dev-server": "^3.1.14",
     "webpack-merge": "^4.1.5",
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "chalk": "^2.4.1",
+    "lodash.throttle": "^4.1.1",
+    "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-icons": "^3.2.2",
@@ -74,6 +70,7 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.1.3"
   }
 }

@@ -1,0 +1,80 @@
+@import 'reset';
+
+$background-base-color: #BA6E6E;
+$dialog-primary-color: #F0E7D8;
+$dialog-secondary-color:  #AB9B96;
+$rabbit-color: #60D0D2;
+$button-color: #BA6E6E;
+
+$max-width-app: 800px;
+$min-width-app: 300px;
+$max-width-login: 400px;
+$max-width-main-dialog: 600px;
+
+$goingMobile: 490px;
+
+body {
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Verdana, sans-serif;
+    color: black;
+    background: $background-base-color;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+    text-align: center;
+}
+
+hr {
+    border:none;
+    height: 20px;
+    width: 90%;
+    height: 50px;
+    margin-top: 0;
+    border-bottom: 1px solid $rabbit-color;
+    box-shadow: 0 4px 4px -4px $dialog-secondary-color;
+    margin: -50px auto 10px;
+}
+.container {
+    max-width: $max-width-app;
+    min-width: $min-width-app;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    background: $background-base-color;
+    border-radius: 8px;
+}
+
+.btn {
+    text-transform: uppercase;
+    margin: 35px auto;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, .29);
+    cursor: pointer;
+    background: $button-color;
+    font-size: 1rem;
+    width: 150px;
+    position: relative;
+}
+
+.btn:hover {
+    border-color: rgba(0, 0, 0, .5);
+    text-decoration: none;
+}
+
+.btn:focus {
+    outline: 0;
+    font-weight: 700;
+    border-width: 2px;
+}
+
+.center {
+    text-align: center;
+}
+
+.active {
+    font-weight: bold;
+}
+
+.footer-wrapper {
+    padding: 25px;
+}

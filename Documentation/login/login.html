@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Page Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="login.css" />
+    </head>
+
+    <body>
+        <div class='container'>
+            <div class='login'>
+                <div class='login-wrapper'>
+                    <form class='login-form' onSubmit={this.handleSubmit}>
+                        <div class='login-header'>
+                            <span>Welcome to Would You Rather?</span>
+                            <p>A Running Rabbit Production</p>
+
+
+                        </div>
+                        <div class='login-logo'>
+
+                        </div>
+                        <div class='login-selector'>
+                            <select id='login-select'>
+                                <option value='jpbutler'>John</option>
+                                <option value='mcmacster'>mac</option>
+                                <option value='edo'>hotlips</option>
+                            </select></div>
+                        <div>Sign in</div>
+                        <LoginSelector />
+                        <button class='btn' type='submit'>
+                            Sign In
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

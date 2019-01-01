@@ -1,0 +1,62 @@
+@import '../../index.scss';
+@import '../nav/nav.scss';
+
+.dashboard-wrapper {
+    position: relative;
+    max-width: $max-width-main-dialog;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    background: $dialog-primary-color;
+    border-radius: 8px;
+}
+
+.dashboard-tab {
+    width: 100%;
+    background: $dialog-secondary-color;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.selected-tab {
+    background: $dialog-primary-color;
+    border-top:  1px solid gray;
+}
+
+.unselected-tab {
+    background: $dialog-secondary-color;
+    border: 1px solid gray;
+}
+
+.raise-left-tab {
+    border-right:  1px solid gray;
+}
+
+.raise-right-tab {
+    border-left:  1px solid gray;
+}
+
+div.dashboard-tab-left {
+    display: inline-block;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 10px;
+    float: left;
+    height: 2.5rem;
+    width: 50%;
+    padding: 2px 0 2px;
+}
+
+div.dashboard-tab-right {
+    display: inline-block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 8px;
+    float: right;
+    height: 2.5rem;
+    width: 50%;
+    padding: 2px 0 2px;
+}
+
+.dashboard-questions {
+    clear: both;
+    float: none;
+}

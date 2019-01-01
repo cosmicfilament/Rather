@@ -1,0 +1,100 @@
+@import '../../index.scss';
+
+.nav{
+    position: relative;
+    max-width: $max-width-main-dialog;
+    margin: 0 auto;
+    text-align: center;
+    background: $background-base-color;
+}
+
+.nav-title-toggle-icon {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.nav-title-toggle-icon svg{
+    display: none;
+}
+
+.nav-app-title {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.navBar-ul-normal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.nav li:first-child {
+    padding-left: 10px;
+}
+
+.nav li:last-child {
+    margin-left: auto;
+    padding-left: 30px;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style-type: none;
+    padding: 10px;
+    text-decoration: none;
+}
+
+span.nav-greeting {
+    display: initial;
+}
+
+img.nav-avatar {
+    position: absolute;
+    height: 40%;
+    top: 35px;
+    border-radius: 2px;
+}
+
+@media only screen and (max-width: $goingMobile) {
+    ul,
+    li {
+        flex-direction: column;
+        padding: 4px 2px 2px;
+        margin: 0;
+        text-align: left;
+    }
+    .nav li:first-child {
+        padding: 4px 2px 2px;
+        margin: 0;
+    }
+
+    .nav li:last-child {
+        padding: 4px 2px 2px;
+        margin: 0;
+    }
+
+    .navBar-ul-normal {
+        display: none;
+    }
+    .nav-title-toggle-icon svg {
+        align-self: flex-start;
+        display: initial;
+        cursor: pointer;
+    }
+    .navBar-toggle-show {
+        display: flex;
+        position: absolute;
+        z-index: 100;
+        background: $rabbit-color;
+        border-radius: 8px;
+    }
+    img.nav-avatar,
+    span.nav-greeting {
+        display: none;
+    }
+}
