@@ -1,5 +1,3 @@
-@import '../../index.scss';
-@import '../nav/nav.scss';
 
 .dashboard-wrapper {
     position: relative;
@@ -7,22 +5,22 @@
     margin: 0 auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
-    background: $dialog-primary-color;
-    border-radius: 8px;
+    background: $background-base-color;
+    //border-radius: 8px;
 }
 
-.dashboard-tab {
+.dashboard-tab-wrapper {
     width: 100%;
     background: $dialog-secondary-color;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
-
+// lighter color
 .selected-tab {
     background: $dialog-primary-color;
     border-top:  1px solid gray;
 }
-
+// darker color
 .unselected-tab {
     background: $dialog-secondary-color;
     border: 1px solid gray;
@@ -36,7 +34,7 @@
     border-left:  1px solid gray;
 }
 
-div.dashboard-tab-left {
+.dashboard-tab-left {
     display: inline-block;
     border-top-left-radius: 8px;
     border-top-right-radius: 10px;
@@ -46,7 +44,7 @@ div.dashboard-tab-left {
     padding: 2px 0 2px;
 }
 
-div.dashboard-tab-right {
+.dashboard-tab-right {
     display: inline-block;
     border-top-left-radius: 10px;
     border-top-right-radius: 8px;
@@ -56,7 +54,8 @@ div.dashboard-tab-right {
     padding: 2px 0 2px;
 }
 
-.dashboard-questions {
-    clear: both;
-    float: none;
+.dashboard-tab-body {
+    float: left;
+    width: 100%;
+    background: $dialog-primary-color;
 }

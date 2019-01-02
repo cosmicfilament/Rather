@@ -12,7 +12,7 @@ export function getInitialData() {
         users,
         questions,
     }));
-}
+};
 
 export function getUser(userId) {
     return server._getUsers()

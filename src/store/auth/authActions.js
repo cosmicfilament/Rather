@@ -1,5 +1,6 @@
 import { SET_AUTH_USER } from './authActionTypes';
 import { getUser, getNewToken } from '../../utils/api';
+import helpers from '../../utils/helpers';
 
 // set auth user from login
 export function setAuthUser(uid = '', password = '', name = '', avatarURL = '', token = 0) {
@@ -25,12 +26,16 @@ export function handleLogin(uid, password) {
             getUser(uid),
             getNewToken()
         ]).then(([user, token]) => {
-            if (user.password === password) {
-                dispatch(setAuthUser(uid, password, user.name, user.avatarURL, token));
-            }
-            else { // set token to -1 on fail
-                dispatch(setAuthUser(uid, '', '', '', -1));
-            }
+            user.password === password
+                ? dispatch(setAuthUser(
+                    uid, password, user.name, user.avatarURL, token))
+                : dispatch(setAuthUser(uid, '', '', '', -1));
         })
+    };
+};
+
+export function handleLogout() {
+    return (dispatch) => {
+        dispatch(setAuthUser('', '', '', '', 0));
     }
 };

@@ -6,7 +6,7 @@ import middleware from './middleware';
 import helpers from './utils/helpers';
 import throttle from 'lodash.throttle';
 
-import './index.scss';
+import './styles/index.scss';
 import App from './components/App';
 
 import authUser from './store/auth/authReducer';

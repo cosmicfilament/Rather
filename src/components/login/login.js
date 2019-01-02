@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import LoginHeader from './loginHeader';
 import LoginForm from './loginForm';
-import './login.scss';
 
 const Login = () => {
 

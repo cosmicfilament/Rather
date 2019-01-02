@@ -1,10 +1,7 @@
 'use strict';
 
 const helpers = {};
-
-helpers.isTokenExpired = (token) => {
-    return token <= Date.now() ? true : false;
-};
+export default helpers;
 
 helpers.saveToLocalStorage = (key, value) => {
     try {
@@ -57,4 +54,38 @@ helpers.validateObject = (obj) => {
     return false;
 };
 
-export default helpers;
+/**
+ * @summary log
+ * @description writes in color to the console in staqing mode only
+ * @returns object as JSON string
+ */
+helpers.log = (color, msg) => {
+
+    switch (color) {
+        case 'red':
+            color = '\x1b[31m%s';
+            break;
+        case 'green':
+            color = '\x1b[32m%s';
+            break;
+        case 'blue':
+            color = '\x1b[34m%s';
+            break;
+        case 'yellow':
+            color = '\x1b[33m%s';
+            break;
+        case 'black':
+            color = '\x1b[30m%s';
+            break;
+        case 'white':
+            color = '\x1b[37m%s';
+            break;
+        case 'cyan':
+            color = '\x1b[36m%s';
+            break;
+        case 'magenta':
+            color = '\x1b[35m%s';
+            break;
+    }
+    console.log(color, msg);
+};

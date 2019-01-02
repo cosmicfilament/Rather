@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router';
 import Avatar from './avatar';
 import Greeting from './greeting';
 import { FaBars } from 'react-icons/fa';
-//import './nav.scss';
+import { handleLogout } from '../../store/auth/authActions';
+import '../../styles/index.scss';
+// inspired by Pete Townsend
+import { SIZE_GOING_MOBILE } from '../../utils/constants';
 
-const GOING_MOBILE = 490;
 
-export default class Nav extends Component {
+class Nav extends Component {
     constructor(props) {
         super(props);
 
@@ -27,7 +31,7 @@ export default class Nav extends Component {
     }
 
     handleWindowResize = () => {
-        const isMobile = window.innerWidth < GOING_MOBILE;
+        const isMobile = window.innerWidth < SIZE_GOING_MOBILE;
         this.setState((prevState) => ({
             goingMobile: isMobile,
             ulClass: isMobile ? prevState.ulClass : 'navBar-ul-normal'
@@ -47,6 +51,11 @@ export default class Nav extends Component {
         });
     }
 
+    handleLogout = () => {
+        this.props.dispatch(handleLogout());
+        <Redirect to='/' />
+    }
+
     render() {
         const { name, avatarURL } = this.props;
         return (
@@ -54,8 +63,7 @@ export default class Nav extends Component {
                 <div className='nav-title-wrapper'>
                     <div className='nav-title-toggle-icon'>
                         <FaBars
-                            onClick={this.handleToggleClick}
-                        />
+                            onClick={this.handleToggleClick} />
                     </div>
                     <div className='nav-app-title'>
                         Would You Rather?
@@ -64,18 +72,24 @@ export default class Nav extends Component {
                 <div>
                     <ul className={this.state.ulClass}>
                         <li>
-                            <NavLink to='/' exact activeClassName='active'>
+                            <NavLink to='/' exact
+                                className='inactive'
+                                activeClassName='active'>
                                 Home
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to='/new' activeClassName='active'>
+                            <NavLink to='/new'
+                                className='inactive'
+                                activeClassName='active'>
                                 New Question
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to='/leader' activeClassName='active'>
-                                Leader Board
+                            <NavLink to='/leader'
+                                className='inactive'
+                                activeClassName='active'>
+                                LeaderBoard
                             </NavLink>
                         </li>
                         <li>
@@ -84,8 +98,10 @@ export default class Nav extends Component {
                         <li>
                             <Avatar name={name} avatarURL={avatarURL} />
                         </li>
-                        <li>
-                            <NavLink to='/logout' activeClassName='active'>
+                        <li onClick={this.handleLogout} >
+                            <NavLink to='/logout'
+                                className='inactive'
+                                activeClassName='active'>
                                 Logout
                             </NavLink>
                         </li>
@@ -95,3 +111,5 @@ export default class Nav extends Component {
         );
     }
 }
+
+export default withRouter(connect()(Nav));

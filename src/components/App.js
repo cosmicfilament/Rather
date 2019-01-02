@@ -1,12 +1,15 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
 import { handleInitialData } from '../store/init/initActions';
+import ProgressBar from './progressBar/progressBar';
 import Nav from './nav/nav';
 import Login from './login/login';
 import Dashboard from './dashboard/dashboard';
+import LeaderBoard from './leaderBoard/leaderboard';
 import Footer from './footer';
-import '../index.scss';
+import '../styles/index.scss';
 
 class App extends Component {
 
@@ -18,14 +21,20 @@ class App extends Component {
         return (
             <Router>
                 <Fragment>
+                    {/* <ProgressBar /> */}
                     <div className='container'>
                         {this.props.loggedIn
                             ?
                             <Fragment>
                                 <Nav name={this.props.userName} avatarURL={this.props.avatarURL} />
-                                <Dashboard />
+                                <Route path='/' exact component={Dashboard} />
+                                <Route path='/LeaderBoard' component={LeaderBoard} />
+                                <Route path='/Logout' render={() => (
+                                    < Redirect to='/' />
+                                )} />
                             </Fragment>
-                            : <Login />
+                            :
+                            <Login />
                         }
                         <Footer />
                     </div>
@@ -35,7 +44,7 @@ class App extends Component {
     }
 }
 
-function mapStateToProps({ authUser, users }) {
+function mapStateToProps({ authUser }) {
 
     return {
         loggedIn: authUser && authUser.token > 0,
