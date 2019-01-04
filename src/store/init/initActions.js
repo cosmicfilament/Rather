@@ -1,7 +1,7 @@
 import { getInitialData } from '../../utils/api';
 import { receiveUsers } from '../users/usersActions';
 import { receiveQuestions } from '../questions/questionsActions';
-import { setAuthUser } from '../auth/authActions';
+import { setAuthUser, setAuthUserUI } from '../auth/authActions';
 
 export function handleInitialData() {
     return (dispatch) => {

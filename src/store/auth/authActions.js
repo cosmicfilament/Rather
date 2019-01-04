@@ -1,9 +1,10 @@
-import { SET_AUTH_USER } from './authActionTypes';
+import { SET_AUTH_USER } from '../../utils/constants';
 import { getUser, getNewToken } from '../../utils/api';
-import helpers from '../../utils/helpers';
+import { LOGIN_FAILED_TOKEN, LOGIN_DEFAULT_TOKEN } from '../../utils/constants';
 
 // set auth user from login
-export function setAuthUser(uid = '', password = '', name = '', avatarURL = '', token = 0) {
+export function setAuthUser(uid = '', password = '', name = '',
+    avatarURL = '', token = LOGIN_DEFAULT_TOKEN) {
 
     return ({
         type: SET_AUTH_USER,
@@ -29,13 +30,13 @@ export function handleLogin(uid, password) {
             user.password === password
                 ? dispatch(setAuthUser(
                     uid, password, user.name, user.avatarURL, token))
-                : dispatch(setAuthUser(uid, '', '', '', -1));
+                : dispatch(setAuthUser(uid, '', '', '', LOGIN_FAILED_TOKEN));
         })
     };
 };
 
 export function handleLogout() {
     return (dispatch) => {
-        dispatch(setAuthUser('', '', '', '', 0));
+        dispatch(setAuthUser('', '', '', '', LOGIN_DEFAULT_TOKEN));
     }
 };

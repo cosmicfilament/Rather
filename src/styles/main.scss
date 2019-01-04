@@ -8,14 +8,18 @@ $button-color: #BA6E6E;
 $max-width-app: 800px;
 $min-width-app: 300px;
 $max-width-login: 400px;
+$max-width-question: 500px;
 $max-width-main-dialog: 600px;
 
 $goingMobile: 490px;
 
+html {
+    background: white;
+}
 body {
     font-family: 'Segoe UI', 'Segoe UI', Tahoma, Verdana, sans-serif;
     color: black;
-    background: $background-base-color;
+    background: white;
     box-sizing: border-box;
 }
 
@@ -33,10 +37,12 @@ hr {
     box-shadow: 0 4px 4px -4px $dialog-secondary-color;
     margin: -50px auto 10px;
 }
+
 .container {
     max-width: $max-width-app;
     min-width: $min-width-app;
     margin: 0 auto;
+    //padding: 0 50px 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
     background: $background-base-color;
@@ -53,6 +59,7 @@ hr {
     font-size: 1rem;
     width: 150px;
     position: relative;
+    border-radius: 5px;
 }
 
 .btn:hover {
@@ -77,4 +84,12 @@ hr {
 
 .footer-wrapper {
     padding: 25px;
+}
+
+@media only screen and (min-width: 820px) {
+    .container {padding: 0 25px 0;}
+}
+
+@media only screen and (min-width: 850px) {
+    .container {padding: 0 50px 0;}
 }

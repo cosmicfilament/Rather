@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { handleLogin } from '../../store/auth/authActions';
 import helpers from '../../utils/helpers';
+import { LOGIN_FAILED_TOKEN, LOGIN_DEFAULT_TOKEN } from '../../utils/constants';
 
 class LoginForm extends Component {
 
     state = {
         uid: 'jpbutler',
         password: 'password123',
-        token: 0
+        token: LOGIN_DEFAULT_TOKEN
     }
 
     handleChange = (e) => {
@@ -87,8 +88,7 @@ function mapStateToProps({ authUser }) {
     console.log(`App mapStateToProps authUser: ${JSON.stringify(authUser)}`);
 
     return {
-        ...authUser,
-        loginFailed: authUser && authUser.token === -1
+        loginFailed: authUser && authUser.token === LOGIN_FAILED_TOKEN
     };
 }
 

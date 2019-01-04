@@ -111,7 +111,7 @@ let users = {
     uid: 'sarahedo',
     password: 'password123',
     name: 'Sarah Edo',
-    avatarURL: '../images/avatars/man-4.png',
+    avatarURL: './src/images/man-4.png',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionOne',
@@ -124,7 +124,7 @@ let users = {
     uid: 'tylermcginnis',
     password: 'password123',
     name: 'Tyler McGinnis',
-    avatarURL: '../images/avatars/man-2.png',
+    avatarURL: './src/images/man-2.png',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -135,7 +135,7 @@ let users = {
     uid: 'jpbutler',
     password: 'password123',
     name: 'John Butler',
-    avatarURL: './src/images/avatars/man-1.png',
+    avatarURL: './src/images/man-1.png',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',

@@ -8,7 +8,7 @@ import { FaBars } from 'react-icons/fa';
 import { handleLogout } from '../../store/auth/authActions';
 import '../../styles/index.scss';
 // inspired by Pete Townsend
-import { SIZE_GOING_MOBILE } from '../../utils/constants';
+import { LOGIN_SIZE_GOING_MOBILE } from '../../utils/constants';
 
 
 class Nav extends Component {
@@ -31,7 +31,7 @@ class Nav extends Component {
     }
 
     handleWindowResize = () => {
-        const isMobile = window.innerWidth < SIZE_GOING_MOBILE;
+        const isMobile = window.innerWidth < LOGIN_SIZE_GOING_MOBILE;
         this.setState((prevState) => ({
             goingMobile: isMobile,
             ulClass: isMobile ? prevState.ulClass : 'navBar-ul-normal'

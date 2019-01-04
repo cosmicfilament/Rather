@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import {
@@ -8,36 +9,36 @@ import {
     TAB_UNSELECTED
 } from '../../utils/constants';
 
-class DashboardTab extends Component {
-    constructor(props) {
-        super(props);
+const DashboardTab = ({ side, title, selected, selectedTab }) => {
 
-        this.state = {
-            selected: this.props.defaultSelected
-        };
-    }
+    const tabClass = classNames(side, {
+        'dashboard-tab-left': side === TAB_LEFT,
+        'dashboard-tab-right': side === TAB_RIGHT,
+        'raise-left-tab': side === TAB_LEFT &&
+            selected === TAB_SELECTED,
+        'raise-right-tab': side === TAB_RIGHT &&
+            selected === TAB_SELECTED,
+        'selected-tab': selected === TAB_SELECTED,
+        'unselected-tab': selected === TAB_UNSELECTED
+    });
 
-    render() {
-        const { selected } = this.state;
-        const { side, title } = this.props;
-
-        const tabClass = classNames(this.props.side, {
-            'dashboard-tab-left': side === TAB_LEFT,
-            'dashboard-tab-right': side === TAB_RIGHT,
-            'raise-left-tab': side === TAB_LEFT &&
-                selected === TAB_SELECTED,
-            'raise-right-tab': side === TAB_RIGHT &&
-                selected === TAB_SELECTED,
-            'selected-tab': selected === TAB_SELECTED,
-            'unselected-tab': selected === TAB_UNSELECTED
-        });
-
-        return (
-            <div>
-                <div className={tabClass} >{title}</div>
-            </div >
-        );
-    }
+    return (
+        <div>
+            <div
+                className={tabClass}
+                onClick={(e) => selectedTab(side)}
+            >
+                {title}
+            </div>
+        </div >
+    );
 }
+
+DashboardTab.propTypes = {
+    side: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    selected: PropTypes.bool.isRequired,
+    selectedTab: PropTypes.func.isRequired
+};
 
 export default DashboardTab;

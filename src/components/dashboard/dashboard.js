@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DashboardTab from './dashboardTab';
-import DashboardTabBody from './dashboardTabBody';
+import DashboardList from './dashboardList';
 import '../../styles/index.scss';
 
 import {
@@ -11,21 +11,40 @@ import {
 } from '../../utils/constants';
 
 class Dashboard extends Component {
+    // initial state is left tab selected
+    state = { selectedSide: TAB_LEFT };
+
+    handleTabSelection = (tab) => {
+        const { selectedSide } = this.state;
+
+        if (selectedSide !== tab) {
+            this.setState({ selectedSide: tab });
+        }
+    }
 
     render() {
+
+        const { selectedSide } = this.state;
+
         return (
             <div className='dashboard-tab-wrapper'>
                 <DashboardTab
                     side={TAB_LEFT}
                     title={'Unanswered Questions'}
-                    defaultSelected={TAB_SELECTED}
+                    selected={selectedSide === TAB_LEFT ?
+                        TAB_SELECTED :
+                        TAB_UNSELECTED}
+                    selectedTab={this.handleTabSelection}
                 />
                 <DashboardTab
                     side={TAB_RIGHT}
                     title={'Answered Questions'}
-                    defaultSelected={TAB_UNSELECTED}
+                    selected={selectedSide === TAB_RIGHT ?
+                        TAB_SELECTED :
+                        TAB_UNSELECTED}
+                    selectedTab={this.handleTabSelection}
                 />
-                <DashboardTabBody />
+                <DashboardList side={selectedSide} />
             </div >
         );
     }

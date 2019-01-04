@@ -1,0 +1,90 @@
+
+.question-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: $max-width-question;
+    height:100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: left;
+    background: $dialog-primary-color;
+    border-radius: 4px;
+}
+
+.question-title {
+    background: $dialog-secondary-color;
+    text-align: center;
+    padding: 10px 2px 10px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border: 1px solid #0000;
+}
+
+.question-body-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+// must set width and height in flex container
+// or image won't appear - that's a couple of
+// hours of my life I will never get back.
+.question-avatar {
+        height: 100px;
+        width: 100px;
+        border-radius: 25px;
+        margin: 10px 25px 10px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+}
+
+// had to change the height and color but this is pretty
+// much a straight copy of: https://codepen.io/Acconut/pen/ftFaw
+.vhr-wrapper {
+    margin-right: 20px;
+}
+
+.vhr-outer {
+    width: 1px;
+    height: 125px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vhr-inner {
+    position: absolute;
+    width:100%;
+    height: 40%;
+    background: $rabbit-color;
+    top: 30%;
+    box-shadow: 0px 0px 30px 20px $rabbit-color;
+  }
+
+.question-details-wrapper {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    padding: 10px 0px 10px;
+    margin: 10px;
+    font-style: italic;
+}
+
+div.question-details-wrapper div:first-of-type {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin: 0px 0px 10px;
+    font-style: normal;
+}
+
+.question-poll-button-wrapper {
+    display: block;
+
+}
+
+.question-poll-button {
+    margin: 10px 0 0;
+    padding: 5px;
+    width: 200px;
+    text-transform: none;
+}

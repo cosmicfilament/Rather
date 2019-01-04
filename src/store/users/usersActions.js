@@ -1,4 +1,4 @@
-import { RECEIVE_USERS } from './usersActionTypes';
+import { RECEIVE_USERS } from '../../utils/constants';
 
 export function receiveUsers(users) {
     return {

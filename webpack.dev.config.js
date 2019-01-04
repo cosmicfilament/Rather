@@ -12,7 +12,7 @@ module.exports = merge(common, {
         compress: true,
         watchContentBase: true,
         historyApiFallback: true,
-        host: 'localhost',
+        host: '192.168.1.52',
         port: 3000,
         hot: true,
         open: true,

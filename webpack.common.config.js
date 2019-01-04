@@ -52,6 +52,9 @@ module.exports = merge({
                     {
                         loader: 'url-loader'
                     }
+                ],
+                include: [
+                    path.resolve(__dirname, 'src/images')
                 ]
             }
         ]

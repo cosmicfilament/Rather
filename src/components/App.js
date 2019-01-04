@@ -8,6 +8,8 @@ import Nav from './nav/nav';
 import Login from './login/login';
 import Dashboard from './dashboard/dashboard';
 import LeaderBoard from './leaderBoard/leaderboard';
+import PollQuestion from './poll/pollQuestion';
+import PollResults from './poll/pollResults';
 import Footer from './footer';
 import '../styles/index.scss';
 
@@ -28,6 +30,8 @@ class App extends Component {
                             <Fragment>
                                 <Nav name={this.props.userName} avatarURL={this.props.avatarURL} />
                                 <Route path='/' exact component={Dashboard} />
+                                <Route path='/pollQuestion/:id' component={PollQuestion} />
+                                <Route path='/pollResults/:id' component={PollResults} />
                                 <Route path='/LeaderBoard' component={LeaderBoard} />
                                 <Route path='/Logout' render={() => (
                                     < Redirect to='/' />

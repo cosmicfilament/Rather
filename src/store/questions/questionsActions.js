@@ -1,4 +1,4 @@
-import { RECEIVE_QUESTIONS } from './questionsActionTypes';
+import { RECEIVE_QUESTIONS } from '../../utils/constants';
 
 
 export function receiveQuestions(questions) {
