@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Question from './question';
+import Question from '../questions/questionContainer';
 import { withRouter } from 'react-router-dom';
 import { TAB_LEFT } from '../../utils/constants';
 
