@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <div className='footer-wrapper'>
             <hr />
-            <p>footer stuff</p>
+            <p>Copyright 2019 -- The Cosmic Filament</p>
         </div>
     );
 };

@@ -1,19 +1,14 @@
 
 .dashboard-wrapper {
+    @include borderStyle;
     position: relative;
     max-width: $max-width-main-dialog;
-    margin: 0 auto;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;
-    background: $background-base-color;
-    //border-radius: 8px;
 }
 
 .dashboard-tab-wrapper {
+    @include headerStyle;
+    border: none;
     width: 100%;
-    background: $dialog-secondary-color;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
 }
 // lighter color
 .selected-tab {

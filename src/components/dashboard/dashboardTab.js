@@ -41,4 +41,11 @@ DashboardTab.propTypes = {
     selectedTab: PropTypes.func.isRequired
 };
 
+DashboardTab.defaultProps = {
+    side: TAB_LEFT,
+    title: '',
+    selected: false,
+    selectedTab: f => f
+};
+
 export default DashboardTab;

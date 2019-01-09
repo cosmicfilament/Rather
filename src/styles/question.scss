@@ -1,23 +1,17 @@
 
 .question-wrapper {
+    @include borderStyle;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
     max-width: $max-width-question;
     height:100%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: left;
     background: $dialog-primary-color;
-    border-radius: 4px;
 }
 
 .question-title {
-    background: $dialog-secondary-color;
-    text-align: center;
+    @include headerStyle;
     padding: 10px 2px 10px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    border: 1px solid #0000;
 }
 
 .question-body-wrapper {
@@ -32,34 +26,11 @@
         height: 100px;
         width: 100px;
         border-radius: 25px;
-        margin: 10px 25px 10px;
+        margin: 20px 25px 10px;
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
 }
-
-// had to change the height and color but this is pretty
-// much a straight copy of: https://codepen.io/Acconut/pen/ftFaw
-.vhr-wrapper {
-    margin-right: 20px;
-}
-
-.vhr-outer {
-    width: 1px;
-    height: 125px;
-    margin: auto;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .vhr-inner {
-    position: absolute;
-    width:100%;
-    height: 40%;
-    background: $rabbit-color;
-    top: 30%;
-    box-shadow: 0px 0px 30px 20px $rabbit-color;
-  }
 
 .question-details-wrapper {
     display: flex;
@@ -68,23 +39,110 @@
     padding: 10px 0px 10px;
     margin: 10px;
     font-style: italic;
+
+    div:first-of-type {
+        font-weight: bold;
+        font-size: 1.25rem;
+        margin: 0px 0px 10px;
+        font-style: normal;
+    }
 }
 
-div.question-details-wrapper div:first-of-type {
-    font-weight: bold;
-    font-size: 1.25rem;
-    margin: 0px 0px 10px;
-    font-style: normal;
+.question-poll-button-wrapper,
+.answer-button-wrapper {
+    @include btnWrapper;
 }
 
-.question-poll-button-wrapper {
-    display: block;
+.question-poll-button,
+.answer-button {
+    @include btn;
 
-}
-
-.question-poll-button {
     margin: 10px 0 0;
     padding: 5px;
     width: 200px;
     text-transform: none;
+}
+
+.results-detail-wrapper {
+    @include borderStyle;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: $max-width-question;
+    height:100%;
+    text-align: left;
+    background: $decoration-color;
+    padding: 10px 10px 0;
+
+    // From: https://css-tricks.com/the-shapes-of-css/
+
+    .star-six {
+        width: 0;
+        height: 0;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-bottom: 50px solid gold;
+        position: absolute;
+        top: -10px;
+        left: 280px;
+    }
+    .star-six:after {
+        width: 0;
+        height: 0;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-top: 50px solid gold;
+        position: absolute;
+        content: "";
+        top: 15px;
+        left: -25px;
+    }
+
+    .star-six-text {
+        position: absolute;
+        font-weight: bold;
+        font-size: .8rem;
+        top: 15px;
+        left: 295px;
+    }
+    p {
+        font-weight: normal;
+        font-style: italic;
+        font-size: 1rem;
+        padding: 10px 5px 10px;
+    }
+
+    .results-summary{
+        font-weight: bold;
+        text-align: center;
+        padding: 0 0 10px 0;
+    }
+
+    .progress-bar {
+        @include btnBorder;
+        position: relative;
+        height: 20px;
+        width: 90%;
+        border-radius: 50px;
+        background-color: $dialog-primary-color;
+        text-align: right;
+        font-size: .8rem;
+        font-weight: bold;
+        color: $btn-border-color;
+        padding: 2px;
+
+        span {
+            position: absolute;
+            top: -2px;
+            left: 45%;
+        }
+      }
+
+      .progress-bar-widget {
+        background: $dialog-secondary-color;
+        height: 100%;
+        border-radius: inherit;
+        transition: width .5s ease-in;
+      }
+
 }

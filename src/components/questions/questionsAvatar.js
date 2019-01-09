@@ -5,9 +5,7 @@ const Avatar = ({ url }) => {
     return (
         <Fragment>
             <div className='question-avatar'
-                style={{
-                    backgroundImage: `url(\"${url}\")`
-                }}
+                style={{ backgroundImage: `url(\"${url}\")` }}
             />
         </Fragment >
     );

@@ -5,7 +5,10 @@ export default helpers;
 
 helpers.saveToLocalStorage = (key, value) => {
     try {
-        localStorage.setItem(key, JSON.stringify(value));
+        if (helpers.validateObject(value) && value.authUser.token > 0) {
+            console.log(`Saving to localStorage: ${JSON.stringify(value)}`);
+            localStorage.setItem(key, JSON.stringify(value));
+        }
     }
     catch (error) {
         console.log(`Failed to save to localStorage item with key: ${key}.`);
@@ -14,7 +17,9 @@ helpers.saveToLocalStorage = (key, value) => {
 
 helpers.getFromLocalStorage = (key) => {
     try {
-        return JSON.parse(localStorage.getItem(key));
+        const result = JSON.parse(localStorage.getItem('state'));
+        console.log(`getFromLocalStorage: ${JSON.stringify(result)}`);
+        return result;
     }
     catch (error) {
         console.log(`Failed to retrieve from localStorage item with key: ${key}.`);

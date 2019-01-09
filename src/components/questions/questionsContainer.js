@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import VerticalBar from './verticalBar';
-import Avatar from './avatar';
-import Options from './options';
+import Avatar from './questionsAvatar';
+import Options from './questionsOptions';
 import PollButton from './PollButton';
 
 import {
     TAB_LEFT
 } from '../../utils/constants';
 
-class Question extends Component {
+class Questions extends Component {
 
     handlePollSelection = (url) => {
         this.props.history.push(url);
@@ -17,8 +17,8 @@ class Question extends Component {
     render() {
         const { side, item, user } = this.props;
         const { link, linkText } = (side === TAB_LEFT) ?
-            { link: '/pollQuestion', linkText: 'Submit Answer' } :
-            { link: '/pollResults', linkText: 'View Results' };
+            { link: '/question', linkText: 'Submit Answer' } :
+            { link: '/results', linkText: 'View Results' };
 
         return (
             <div className='question-wrapper' >
@@ -43,4 +43,4 @@ class Question extends Component {
     }
 }
 
-export default Question;
+export default Questions;

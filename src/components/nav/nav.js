@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
-import Avatar from './avatar';
+import Avatar from './navAvatar';
 import Greeting from './greeting';
 import { FaBars } from 'react-icons/fa';
 import { handleLogout } from '../../store/auth/authActions';
 import '../../styles/index.scss';
-// inspired by Pete Townsend
 import { LOGIN_SIZE_GOING_MOBILE } from '../../utils/constants';
 
 
@@ -96,7 +96,7 @@ class Nav extends Component {
                             <Greeting name={name} />
                         </li>
                         <li>
-                            <Avatar name={name} avatarURL={avatarURL} />
+                            <Avatar name={name} url={`../${avatarURL}`} />
                         </li>
                         <li onClick={this.handleLogout} >
                             <NavLink to='/logout'
@@ -111,5 +111,15 @@ class Nav extends Component {
         );
     }
 }
+
+Nav.propTypes = {
+    name: PropTypes.string.isRequired,
+    avatarURL: PropTypes.string.isRequired
+};
+
+Nav.defaultProps = {
+    name: '',
+    avatarURL: ''
+};
 
 export default withRouter(connect()(Nav));

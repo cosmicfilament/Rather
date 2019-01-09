@@ -27,10 +27,10 @@ _server._getQuestions = () => {
     setTimeout(() => res({ ...questions }), 1000);
   });
 };
-
+// author, optionOneText, optionTwoText
 _server._saveQuestion = (question) => {
   return new Promise((res, rej) => {
-    const authedUser = question.author;
+    const uid = question.author;
     const formattedQuestion = formatQuestion(question);
 
     setTimeout(() => {
@@ -41,9 +41,9 @@ _server._saveQuestion = (question) => {
 
       users = {
         ...users,
-        [authedUser]: {
-          ...users[authedUser],
-          questions: users[authedUser].questions.concat([formattedQuestion.id])
+        [uid]: {
+          ...users[uid],
+          questions: users[uid].questions.concat([formattedQuestion.id])
         }
       };
 
@@ -52,15 +52,16 @@ _server._saveQuestion = (question) => {
   });
 };
 
-_server._saveQuestionAnswer = ({ authedUser, qid, answer }) => {
+// uid, question.id, optionOne || optionTwo
+_server._saveQuestionAnswer = ({ uid, qid, answer }) => {
   return new Promise((res, rej) => {
     setTimeout(() => {
       users = {
         ...users,
-        [authedUser]: {
-          ...users[authedUser],
+        [uid]: {
+          ...users[uid],
           answers: {
-            ...users[authedUser].answers,
+            ...users[uid].answers,
             [qid]: answer
           }
         }
@@ -72,13 +73,13 @@ _server._saveQuestionAnswer = ({ authedUser, qid, answer }) => {
           ...questions[qid],
           [answer]: {
             ...questions[qid][answer],
-            votes: questions[qid][answer].votes.concat([authedUser])
+            votes: questions[qid][answer].votes.concat([uid])
           }
         }
       };
 
       res()
-    }, 500);
+    }, 2000);
   });
 };
 

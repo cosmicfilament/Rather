@@ -23,10 +23,10 @@
 .nav-title-toggle-icon {
     display: inline-block;
     padding-right: 10px;
-}
 
-.nav-title-toggle-icon svg{
-    display: none;
+    svg{
+        display: none;
+    }
 }
 
 .nav-app-title {
@@ -102,7 +102,7 @@ img.nav-avatar {
         display: flex;
         position: absolute;
         z-index: 100;
-        background: $rabbit-color;
+        background: $decoration-color;
         border-radius: 8px;
     }
     img.nav-avatar,

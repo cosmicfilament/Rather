@@ -6,8 +6,6 @@ export default function authUser(state = null, action) {
             return {
                 uid: action.uid,
                 password: action.password,
-                name: action.name,
-                avatarURL: action.avatarURL,
                 token: action.token
             }
         default:

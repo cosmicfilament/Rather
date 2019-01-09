@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Avatar = ({ name, avatarURL }) => {
+const Avatar = ({ name, url }) => {
 
     return (
         <img
             className='nav-avatar'
-            src={avatarURL}
+            src={url}
             alt={`Avatar of ${name}`}
         />
     );

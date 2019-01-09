@@ -5,36 +5,18 @@ import PropTypes from 'prop-types';
 // https://medium.com/@ItsMeDannyZ/how-to-build-a-progress-bar-with-react-8c5e79731d1f
 // with additional help from this stackoverflow example :
 // https://stackoverflow.com/questions/39426083/update-react-component-every-second
-// and additional support from my antiquated brain matter.
+
+
+// as above but I pretty much gutted it and made it fixed.
 
 class ProgressBar extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { percentage: 0 };
-    }
     // percentage incrementor
     static defaultProps = {
-        incrementor: 10
-    }
-
-    incrementPercentage = () => {
-        this.setState(prevState => ({
-            percentage: prevState >= 100 ? 100 : prevState + this.props.incrementor
-        }));
-    }
-
-    componentDidMount() {
-        this.interval = setInterval(() => {
-            this.incrementPercentage(), 250
-        });
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.interval);
+        percentage: 10
     }
 
     render() {
-        const { percentage } = this.state;
+        const { percentage } = this.props;
         return (
             <div className='progress-bar'>
                 <_ProgressBar percentage={percentage} />
@@ -44,14 +26,19 @@ class ProgressBar extends Component {
 }
 
 ProgressBar.prototypes = {
-    incrementor: PropTypes.number
+    percentage: PropTypes.number
 };
 
 const _ProgressBar = ({ percentage }) => {
     return (
         <div className='progress-bar-widget'
             style={{ width: `${percentage}%` }}
-        />
+        >
+            <span>
+                {percentage}%
+            </span>
+        </div>
+
     );
 };
 

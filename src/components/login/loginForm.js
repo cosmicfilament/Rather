@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { handleLogin } from '../../store/auth/authActions';
 import helpers from '../../utils/helpers';
-import { LOGIN_FAILED_TOKEN, LOGIN_DEFAULT_TOKEN } from '../../utils/constants';
+import LoginBtn from './loginBtn';
+import { LOGIN_FAILED_TOKEN, LOGIN_DEFAULT_TOKEN } from
+    '../../utils/constants';
 
 class LoginForm extends Component {
 
     state = {
-        uid: 'jpbutler',
-        password: 'password123',
+        uid: '',
+        password: '',
         token: LOGIN_DEFAULT_TOKEN
     }
 
@@ -31,9 +33,7 @@ class LoginForm extends Component {
         }
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-
+    handleSubmit = () => {
         const { uid, password } = this.state;
         if (helpers.validateString(uid) && helpers.validateString(password)) {
 
@@ -47,8 +47,7 @@ class LoginForm extends Component {
         const { uid, password } = this.state;
 
         return (
-            <form className='login-form'
-                onSubmit={this.handleSubmit}>
+            <form className='login-form'>
                 {this.props.loginFailed
                     ? <div
                         className='login-form-error'>
@@ -71,13 +70,7 @@ class LoginForm extends Component {
                         onChange={this.handleChange}
                         placeholder='Password' />
                 </div>
-                <div className='login-form-button-wrapper' >
-                    <button
-                        className='btn'
-                        type='submit'>
-                        Sign In
-                </button>
-                </div>
+                <LoginBtn onHandleSubmit={this.handleSubmit} />
             </form>
         );
     }
@@ -85,7 +78,7 @@ class LoginForm extends Component {
 
 function mapStateToProps({ authUser }) {
 
-    console.log(`App mapStateToProps authUser: ${JSON.stringify(authUser)}`);
+    console.log(`LoginForm mapStateToProps authUser: ${JSON.stringify(authUser)}`);
 
     return {
         loginFailed: authUser && authUser.token === LOGIN_FAILED_TOKEN

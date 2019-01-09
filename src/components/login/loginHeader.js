@@ -5,11 +5,8 @@ const LoginHeader = () => {
 
     return (
         <div className='login-header'>
-            <span>
-                Welcome to Would You Rather?
-            </span>
             <p>
-                A Running Rabbit Thang
+                Welcome to Would You Rather?
             </p>
         </div >
     );

@@ -2,16 +2,70 @@
 $background-base-color: #BA6E6E;
 $dialog-primary-color: #F0E7D8;
 $dialog-secondary-color:  #AB9B96;
-$rabbit-color: #60D0D2;
+$decoration-color: #60D0D2;
 $button-color: #BA6E6E;
+$btn-border-color: #333;
+$header-border-color: gray;
 
-$max-width-app: 800px;
 $min-width-app: 300px;
+$max-width-app: 800px;
 $max-width-login: 400px;
 $max-width-question: 500px;
 $max-width-main-dialog: 600px;
-
+// width at which we show the hamburger nav icon
 $goingMobile: 490px;
+
+@mixin btnBorder {
+    border: 1px solid $btn-border-color;
+}
+
+@mixin hdrBorder {
+    border: 1px solid $header-border-color
+}
+@mixin borderStyle {
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    background: $background-base-color;
+    border-radius: 4px;
+}
+
+@mixin headerStyle {
+    @include hdrBorder;
+    background: $dialog-secondary-color;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    text-align: center;
+}
+
+
+@mixin  btnWrapper {
+    display: block;
+}
+
+@mixin btn {
+    @include btnBorder;
+    text-transform: uppercase;
+    margin: 35px auto;
+    padding: 10px;
+    cursor: pointer;
+    background: $button-color;
+    font-size: 1rem;
+    width: 150px;
+    position: relative;
+    border-radius: 5px;
+
+    hover {
+        border-color: rgba(0, 0, 0, .5);
+        text-decoration: none;
+    }
+
+    focus {
+        outline: 0;
+        font-weight: 700;
+        border-width: 2px;
+    }
+}
 
 html {
     background: white;
@@ -33,44 +87,75 @@ hr {
     width: 90%;
     height: 50px;
     margin-top: 0;
-    border-bottom: 1px solid $rabbit-color;
+    border-bottom: 1px solid $decoration-color;
     box-shadow: 0 4px 4px -4px $dialog-secondary-color;
     margin: -50px auto 10px;
 }
 
+// and another nice piece of css from the web
+
+.hr-text {
+    line-height: 1em;
+    position: relative;
+    outline: 0;
+    border: 0;
+    color: black;
+    text-align: center;
+    height: 1.5em;
+    opacity: .9;
+
+    &:before {
+        content: '';
+        // use the linear-gradient for the fading effect
+        // use a solid background color for a solid bar
+        background: linear-gradient(to right, transparent, #818078, transparent);
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+    }
+        &:after {
+        content: attr(data-content);
+        position: relative;
+        display: inline-block;
+        color: black;
+        padding: 0 .5em;
+        line-height: 1.5em;
+        // this is really the only tricky part, you need to specify the background color of the container element...
+        color: $dialog-secondary-color;
+        background-color: $dialog-primary-color;
+    }
+}
+
+
+// had to change the height and color but this is pretty
+// much a straight copy of: https://codepen.io/Acconut/pen/ftFaw
+.vhr-wrapper {
+    margin-right: 20px;
+}
+
+.vhr-outer {
+    width: 1px;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vhr-inner {
+    position: absolute;
+    width:100%;
+    height: 40%;
+    background: $decoration-color;
+    top: 30%;
+    box-shadow: 0px 0px 30px 20px $decoration-color;
+  }
+
 .container {
+    @include borderStyle();
     max-width: $max-width-app;
     min-width: $min-width-app;
-    margin: 0 auto;
-    //padding: 0 50px 0;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;
-    background: $background-base-color;
-    border-radius: 8px;
-}
-
-.btn {
-    text-transform: uppercase;
-    margin: 35px auto;
-    padding: 10px;
-    border: 1px solid rgba(0, 0, 0, .29);
-    cursor: pointer;
-    background: $button-color;
-    font-size: 1rem;
-    width: 150px;
-    position: relative;
-    border-radius: 5px;
-}
-
-.btn:hover {
-    border-color: rgba(0, 0, 0, .5);
-    text-decoration: none;
-}
-
-.btn:focus {
-    outline: 0;
-    font-weight: 700;
-    border-width: 2px;
 }
 
 .center {

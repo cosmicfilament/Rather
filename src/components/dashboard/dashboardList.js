@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Question from '../questions/questionContainer';
+import Questions from '../questions/questionsContainer';
 import { withRouter } from 'react-router-dom';
 import { TAB_LEFT } from '../../utils/constants';
 
@@ -22,7 +22,7 @@ class DashboardList extends Component {
                 <ul>
                     {sortedQuestions.map(item =>
                         <li key={item.id}>
-                            <Question
+                            <Questions
                                 side={side}
                                 item={item}
                                 user={user}
@@ -41,13 +41,12 @@ DashboardList.defaultProps = {
     side: TAB_LEFT
 };
 
-function mapStateToProps({ authUser, users, questions }, ownProps) {
+function mapStateToProps({ authUser, users, questions }, props) {
 
-    const { side } = ownProps;
+    const { side } = props;
     const user = users[authUser.uid];
 
     return {
-        authUser,
         user,
         // this kicked my butt for quite awhile
         filteredQuestions: (side === TAB_LEFT) ?

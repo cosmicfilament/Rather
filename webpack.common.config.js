@@ -5,11 +5,14 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const path = require('path');
 
+console.log(path.resolve(__dirname, 'src', 'index.js'));
+
 module.exports = merge({
     name: 'webpack.commmon.config',
+    context: path.resolve(__dirname, 'src'),
     entry: [
-        './src/index.js',
-        './src/public/index.html'
+        './index.js',
+        './public/index.html',
     ],
     target: 'web',
     module: {
@@ -18,10 +21,13 @@ module.exports = merge({
                 test: /\.(js|jsx)$/,
                 exclude: [path.resolve(__dirname, 'node_modules')],
                 use: [{
-                    loader: 'babel-loader'
+                    loader: 'babel-loader',
+                    options: {
+                        configFile: path.resolve(__dirname, '.babelrc'),
+                    }
                 }],
                 include: [
-                    path.resolve(__dirname, 'src')
+                    path.resolve(__dirname, './src')
                 ]
             },
             {
@@ -54,15 +60,15 @@ module.exports = merge({
                     }
                 ],
                 include: [
-                    path.resolve(__dirname, 'src/images')
+                    path.resolve('./src/images')
                 ]
             }
         ]
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: path.resolve(__dirname, './src/public/index.html'),
-            favicon: path.resolve(__dirname, './src/images/favicon.png')
+            template: './public/index.html',
+            favicon: './images/favicon.png'
         })
     ]
 });

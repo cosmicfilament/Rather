@@ -29,3 +29,17 @@ export function getNewToken() {
     return server._getNewToken()
         .then(token => token);
 };
+
+// uid, question.id, optionOne || optionTwo
+export function saveAnswer(info) {
+    return server
+        ._saveQuestionAnswer(info)
+        .then();
+};
+// author, optionOneText, optionTwoText
+export function saveQuestion(question) {
+    return server._saveQuestion(question)
+        .then(formattedQuestion => {
+            return formattedQuestion;
+        });
+};

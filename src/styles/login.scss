@@ -1,12 +1,9 @@
 
 .login-wrapper {
+    @include borderStyle;
     display: block;
-    margin: 0 auto;
     max-width: $max-width-login;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;
     background: $dialog-primary-color;
-    border-radius: 4px;
 }
 
 span.login-text {
@@ -17,28 +14,20 @@ span.login-text {
 }
 
 .login-header {
-    background: $dialog-secondary-color;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    border: 1px solid #0000;
-}
+    @include headerStyle;
 
-.login-header span {
-    font-size: 1rem;
-    font-weight: bold;
-    padding-top: 5px;
-}
-
-.login-header p {
-    font-size: .8rem;
-    padding-bottom: 2px;
+    p:first-child {
+        font-size: 1.25rem;
+        font-weight: bold;
+        padding: 10px 0 10px;
+    }
 }
 
 .login-logo {
-    height: 100px;
+    height: 80px;
     border-radius: 25px;
     margin: 10px;
-    background-image: url("../images/favicon.png");
+    background-image: url("../images/spiral_galaxy.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -70,5 +59,9 @@ div.login-form-error
 }
 
 .login-form-button-wrapper {
-    display: block;
+    @include btnWrapper;
+}
+
+.login-form-button {
+    @include btn;
 }
