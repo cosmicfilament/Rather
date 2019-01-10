@@ -8,7 +8,7 @@ import Nav from './nav/nav';
 import Login from './login/login';
 import Dashboard from './dashboard/dashboard';
 import NewQuestion from './newQuestion/newQuestionContainer';
-import LeaderBoard from './leaderBoard/leaderboard';
+import LeaderBoard from './leaderBoard/leaderBoardContainer';
 import ARContainer from './answers/answerResultsContainer';
 import Footer from './footer';
 import '../styles/index.scss';

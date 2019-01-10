@@ -39,6 +39,11 @@ class ResultsDetail extends Component {
 
         return (
             <div className='results-detail-wrapper'>
+                {myVote &&
+                    <img
+                        className='results-detail-fist'
+                        src={'../src/images/pointing.png'} />
+                }
                 <p>Would you rather
                     <span> {option.text}?</span>
                 </p>
@@ -46,12 +51,6 @@ class ResultsDetail extends Component {
                     <ProgressBar
                         incrementor={0}
                         percentage={percentage} />
-                    {myVote &&
-                        <Fragment>
-                            <span className='star-six' />
-                            <span className='star-six-text'>You</span>
-                        </Fragment>
-                    }
                 </div>
                 <p className='results-summary'>
                     {completed} out of {total} votes.

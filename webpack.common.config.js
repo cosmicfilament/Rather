@@ -2,6 +2,7 @@
 
 // common logic between the prod and dev configs
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 const merge = require('webpack-merge');
 const path = require('path');
 
@@ -19,7 +20,9 @@ module.exports = merge({
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                exclude: [path.resolve(__dirname, 'node_modules')],
+                exclude: [
+                    path.resolve(__dirname, 'node_modules')
+                ],
                 use: [{
                     loader: 'babel-loader',
                     options: {
@@ -69,6 +72,9 @@ module.exports = merge({
         new HtmlWebPackPlugin({
             template: './public/index.html',
             favicon: './images/favicon.png'
+        }),
+        new ManifestPlugin({
+            fileName: 'manifest.json',
         })
     ]
 });

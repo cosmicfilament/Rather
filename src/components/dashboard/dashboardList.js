@@ -14,8 +14,7 @@ class DashboardList extends Component {
     render() {
 
         const { side, user, filteredQuestions, history } = this.props;
-        const sortedQuestions =
-            filteredQuestions.sort((a, b) => b.timestamp - a.timestamp);
+        const sortedQuestions = filteredQuestions.sort((a, b) => b.timestamp - a.timestamp);
 
         return (
             <div className='dashboard-tab-body' >

@@ -24,6 +24,7 @@ class Nav extends Component {
 
     componentDidMount() {
         window.addEventListener('resize', this.handleWindowResize);
+        this.handleWindowResize();
     }
 
     componentWillUnmount() {
@@ -39,12 +40,19 @@ class Nav extends Component {
         console.log(`Going Mobile: ${isMobile}`);
     }
 
+    handleMenuClicked = (e) => {
+        e.preventDefault();
+        this.state.goingMobile && this.toggleHamburger();
+    }
+
     handleToggleClick = (e) => {
         e.preventDefault();
+        this.toggleHamburger();
+    }
 
+    toggleHamburger() {
         const isDisplayed = this.state.isDisplayed;
         const ulClass = isDisplayed ? 'navBar-ul-normal' : 'navBar-toggle-show';
-
         this.setState({
             isDisplayed: !isDisplayed,
             ulClass: ulClass
@@ -59,7 +67,8 @@ class Nav extends Component {
     render() {
         const { name, avatarURL } = this.props;
         return (
-            <nav className='nav'>
+            <nav className='nav'
+                onClick={this.handleMenuClicked}>
                 <div className='nav-title-wrapper'>
                     <div className='nav-title-toggle-icon'>
                         <FaBars

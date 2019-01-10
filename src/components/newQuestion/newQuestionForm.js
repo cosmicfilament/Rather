@@ -34,9 +34,17 @@ class NewQuestionForm extends Component {
         }));
     }
 
+    handleReturn = (e) => {
+
+        e.preventDefault();
+        e.key === 'Enter' && this.handleSubmit();
+    }
+
     render() {
         return (
-            <form className='new-question-form'>
+            <form
+                className='new-question-form'
+                onKeyPress={this.handleReturn}>
                 <div>
                     <NewQuestionInput
                         label={'First Question:'}

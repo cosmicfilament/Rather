@@ -9,8 +9,8 @@ import { LOGIN_FAILED_TOKEN, LOGIN_DEFAULT_TOKEN } from
 class LoginForm extends Component {
 
     state = {
-        uid: '',
-        password: '',
+        uid: 'jpbutler',
+        password: 'password123',
         token: LOGIN_DEFAULT_TOKEN
     }
 
@@ -42,6 +42,12 @@ class LoginForm extends Component {
         }
     }
 
+    handleReturn = (e) => {
+
+        e.preventDefault();
+        e.key === 'Enter' && this.handleSubmit();
+    }
+
     render() {
 
         const { uid, password } = this.state;
@@ -56,7 +62,9 @@ class LoginForm extends Component {
                     : <div>
                     </div>
                 }
-                <div className='login-form-input-wrapper'>
+                <div
+                    className='login-form-input-wrapper'
+                    onKeyPress={this.handleReturn}>
                     <input
                         type='text'
                         value={uid}

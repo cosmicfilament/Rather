@@ -67,6 +67,20 @@ $goingMobile: 490px;
     }
 }
 
+@mixin hrule {
+    border:none;
+    width: 90%;
+    height: 50px;
+    margin-top: 0;
+    border-bottom: 1px solid $decoration-color;
+    box-shadow: 0 4px 4px -4px $dialog-secondary-color;
+    margin: -50px auto 10px;
+}
+
+hr {
+    @include hrule;
+}
+
 html {
     background: white;
 }
@@ -79,17 +93,6 @@ body {
 
 h1, h2, h3, h4 {
     text-align: center;
-}
-
-hr {
-    border:none;
-    height: 20px;
-    width: 90%;
-    height: 50px;
-    margin-top: 0;
-    border-bottom: 1px solid $decoration-color;
-    box-shadow: 0 4px 4px -4px $dialog-secondary-color;
-    margin: -50px auto 10px;
 }
 
 // and another nice piece of css from the web
@@ -153,7 +156,7 @@ hr {
   }
 
 .container {
-    @include borderStyle();
+    @include borderStyle;
     max-width: $max-width-app;
     min-width: $min-width-app;
 }
