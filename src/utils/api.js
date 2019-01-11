@@ -25,8 +25,8 @@ export function getUser(userId) {
         })
 };
 
-export function getNewToken() {
-    return server._getNewToken()
+export function getNewToken(uid) {
+    return server._getNewToken(uid)
         .then(token => token);
 };
 

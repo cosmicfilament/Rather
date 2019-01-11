@@ -8,8 +8,8 @@ export const ADD_ANSWER = 'ADD_ANSWER';
 export const RECEIVE_USERS = 'RECEIVE_USERS';
 
 // AuthUser Constants
-// token is good for 30 minutes
-export const TOKEN_EXPIRY = 1000 * 60 * 30;
+// token is good for 5 minutes
+export const TOKEN_EXPIRY = 1000 * 60 * 5
 
 // Login Constants
 // width that we switch to mobile size window

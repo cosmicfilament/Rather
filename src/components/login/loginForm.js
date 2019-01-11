@@ -9,8 +9,8 @@ import { LOGIN_FAILED_TOKEN, LOGIN_DEFAULT_TOKEN } from
 class LoginForm extends Component {
 
     state = {
-        uid: 'jpbutler',
-        password: 'password123',
+        uid: '',
+        password: '',
         token: LOGIN_DEFAULT_TOKEN
     }
 
@@ -24,7 +24,6 @@ class LoginForm extends Component {
                 token: null
             });
         }
-
         if (name === 'pwd') {
             this.setState({
                 password: value,
@@ -36,15 +35,12 @@ class LoginForm extends Component {
     handleSubmit = () => {
         const { uid, password } = this.state;
         if (helpers.validateString(uid) && helpers.validateString(password)) {
-
             const { dispatch } = this.props;
             dispatch(handleLogin(uid, password));
         }
     }
 
     handleReturn = (e) => {
-
-        e.preventDefault();
         e.key === 'Enter' && this.handleSubmit();
     }
 
@@ -85,9 +81,6 @@ class LoginForm extends Component {
 }
 
 function mapStateToProps({ authUser }) {
-
-    console.log(`LoginForm mapStateToProps authUser: ${JSON.stringify(authUser)}`);
-
     return {
         loginFailed: authUser && authUser.token === LOGIN_FAILED_TOKEN
     };

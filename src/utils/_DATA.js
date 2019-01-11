@@ -10,7 +10,8 @@ const _server = {};
 
 import { TOKEN_EXPIRY } from './constants';
 
-_server._getNewToken = () => {
+// ideally would goto the server and get a new token for this user after validating the user
+_server._getNewToken = (uid) => {
   return new Promise((res, rej) => {
     setTimeout(() => res(getNewToken()), 1000);
   });

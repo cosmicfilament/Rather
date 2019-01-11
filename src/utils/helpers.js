@@ -1,29 +1,38 @@
 'use strict';
+import { LOGIN_FAILED_TOKEN } from './constants';
 
 const helpers = {};
 export default helpers;
 
-helpers.saveToLocalStorage = (key, value) => {
+helpers.saveToLocalStorage = (obj) => {
     try {
-        if (helpers.validateObject(value) && value.authUser.token > 0) {
-            console.log(`Saving to localStorage: ${JSON.stringify(value)}`);
-            localStorage.setItem(key, JSON.stringify(value));
-        }
+        const strObj = JSON.stringify(obj);
+        console.log(`Saving token to localStorage: ${strObj}`);
+        localStorage.setItem('token', strObj);
     }
     catch (error) {
-        console.log(`Failed to save to localStorage item with key: ${key}.`);
+        console.log(`Failed to save to localStorage : ${strObj}.`);
     }
 };
 
-helpers.getFromLocalStorage = (key) => {
+helpers.getFromLocalStorage = () => {
     try {
-        const result = JSON.parse(localStorage.getItem('state'));
-        console.log(`getFromLocalStorage: ${JSON.stringify(result)}`);
-        return result;
+        const result = localStorage.getItem('token');
+        console.log(`getFromLocalStorage: ${result}`);
+        return JSON.parse(result);
     }
     catch (error) {
-        console.log(`Failed to retrieve from localStorage item with key: ${key}.`);
-        return null;
+        console.log(`Failed to retrieve from localStorage item : ${result}.`);
+        return LOGIN_DEFAULT_TOKEN;
+    }
+};
+
+helpers.clearLocalStorage = () => {
+    try {
+        localStorage.removeItem('token');
+    }
+    catch (error) {
+        console.log('Failed to remove token from localStorage');
     }
 };
 

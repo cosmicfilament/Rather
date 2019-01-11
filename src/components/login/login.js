@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import LoginHeader from './loginHeader';
 import LoginForm from './loginForm';
+import helpers from '../../utils/helpers';
 
 const Login = () => {
 

@@ -1,0 +1,14 @@
+.notfound-wrapper {
+    @include borderStyle;
+    display: block;
+    max-width: $max-width-login;
+    background: $dialog-primary-color;
+    padding-bottom: 10px;
+}
+
+.notfound-header {
+    @include headerStyle;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 10px 0 10px;
+}
