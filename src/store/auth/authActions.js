@@ -49,6 +49,7 @@ export function handleLogout() {
     };
 };
 
+// triggered by a timer in app.js and renews the token every 30 minutes
 export function handleRenewToken({ uid, token }) {
     return (dispatch) => {
         getNewToken(uid).then((token) => {
