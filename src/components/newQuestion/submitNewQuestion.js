@@ -1,3 +1,10 @@
+'use strict';
+
+/**
+    * @file simple submit button for a new question
+    * @author John Butler
+*/
+
 import React from 'react';
 
 const SubmitNewQuestion = ({ onSubmit }) => {

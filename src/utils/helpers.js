@@ -1,4 +1,10 @@
 'use strict';
+
+/**
+    * @file helper functions not specific to any component
+    * @author John Butler
+*/
+
 import { LOGIN_FAILED_TOKEN } from './constants';
 
 const helpers = {};

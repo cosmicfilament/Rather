@@ -1,6 +1,19 @@
+'use strict';
+
+/**
+    * @file main entry point for the leader board
+    * @author John Butler
+*/
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LeaderBoardItem from './leaderBoardItem';
+import LeaderBoardItem from './leaderboarditem';
+'use strict';
+
+/**
+    * @file container that is called when the leaderboard menu item is selected.
+    * @author John Butler
+*/
 
 class LeaderBoard extends Component {
 

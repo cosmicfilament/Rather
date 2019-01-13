@@ -1,8 +1,15 @@
+'use strict';
+
+/**
+    * @file user login form
+    * @author John Butler
+*/
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { handleLogin } from '../../store/auth/authActions';
+import { handleLogin } from '../../store/auth/authactions';
 import helpers from '../../utils/helpers';
-import LoginBtn from './loginBtn';
+import LoginBtn from './loginbtn';
 import { LOGIN_FAILED_TOKEN, LOGIN_DEFAULT_TOKEN } from
     '../../utils/constants';
 
@@ -47,7 +54,6 @@ class LoginForm extends Component {
     render() {
 
         const { uid, password } = this.state;
-
         return (
             <form className='login-form'>
                 {this.props.loginFailed

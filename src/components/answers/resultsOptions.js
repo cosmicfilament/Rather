@@ -1,6 +1,13 @@
+'use strict';
+
+/**
+    * @file wraps the results logic vice answer
+    * @author John Butler
+*/
+
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import ResultsDetail from './resultsDetail';
+import ResultsDetail from './resultsdetail';
 
 const Options = ({ uid, question }) => {
 

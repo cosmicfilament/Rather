@@ -1,3 +1,10 @@
+'use strict';
+
+/**
+    * @file footer implementation
+    * @author John Butler
+*/
+
 import React from 'react';
 
 const Footer = () => {

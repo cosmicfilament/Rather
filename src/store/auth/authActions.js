@@ -1,3 +1,10 @@
+'use strict';
+
+/**
+    * @file authUser is a generated object synthesized from the users object that represents the current logged in user. This is the redux action for that object.
+    * @author John Butler
+*/
+
 import { SET_AUTH_USER, SET_AUTH_USER_TOKEN } from '../../utils/constants';
 import { getUser, getNewToken } from '../../utils/api';
 import { LOGIN_FAILED_TOKEN, LOGIN_DEFAULT_TOKEN } from '../../utils/constants';

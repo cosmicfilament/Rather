@@ -1,3 +1,9 @@
+'use strict';
+
+/**
+    * @file application constants
+    * @author John Butler
+*/
 
 // Actions Constants
 export const SET_AUTH_USER = 'SET_AUTH_USER';

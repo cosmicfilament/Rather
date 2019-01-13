@@ -1,5 +1,11 @@
 'use strict';
 
+/**
+    * @file common webpack code between dev and prod.
+    * @author John Butler
+*/
+
+
 // common logic between the prod and dev configs
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');

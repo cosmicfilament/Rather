@@ -1,3 +1,10 @@
+'use strict';
+
+/**
+    * @file questions object redux reducer function
+    * @author John Butler
+*/
+
 import { RECEIVE_QUESTIONS, ANSWER_QUESTION, ADD_QUESTION } from '../../utils/constants';
 
 export default function questions(state = {}, action) {

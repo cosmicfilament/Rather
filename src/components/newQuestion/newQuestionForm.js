@@ -1,9 +1,16 @@
+'use strict';
+
+/**
+    * @file new question form
+    * @author John Butler
+*/
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import SubmitNewQuestion from './submitNewQuestion';
-import NewQuestionInput from './newQuestionInput';
-import { handleAddQuestion } from '../../store/questions/questionsActions';
+import SubmitNewQuestion from './submitnewquestion';
+import NewQuestionInput from './newquestioninput';
+import { handleAddQuestion } from '../../store/questions/questionsactions';
 
 class NewQuestionForm extends Component {
 
@@ -35,9 +42,10 @@ class NewQuestionForm extends Component {
     }
 
     handleReturn = (e) => {
-
-        e.preventDefault();
-        e.key === 'Enter' && this.handleSubmit();
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            this.handleSubmit();
+        }
     }
 
     render() {

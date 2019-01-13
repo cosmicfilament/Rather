@@ -1,3 +1,10 @@
+'use strict';
+
+/**
+    * @file displays the options for a single question
+    * @author John Butler
+*/
+
 import React, { Fragment } from 'react';
 
 const Options = ({ item }) => {

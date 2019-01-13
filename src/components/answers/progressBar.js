@@ -1,3 +1,10 @@
+'use strict';
+
+/**
+    * @file progress bar widget
+    * @author John Butler
+*/
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 

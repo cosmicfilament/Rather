@@ -1,3 +1,10 @@
+'use strict';
+
+/**
+    * @file middleware that logs all redux store activity
+    * @author John Butler
+*/
+
 export const logger = (store) => (next) => (action) => {
     console.group(action.type);
     console.log('The action: ', action);

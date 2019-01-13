@@ -1,6 +1,13 @@
+'use strict';
+
+/**
+    * @file displays one of the two options in the middle column of a results card
+    * @author John Butler
+*/
+
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import ProgressBar from './progressBar';
+import ProgressBar from './progressbar';
 
 // option === the question option key
 // either optionOne or optionTwo

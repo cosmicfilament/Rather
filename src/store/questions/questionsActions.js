@@ -1,6 +1,13 @@
+'use strict';
+
+/**
+    * @file questions object redux action functions
+    * @author John Butler
+*/
+
 import { RECEIVE_QUESTIONS, ANSWER_QUESTION, ADD_QUESTION } from '../../utils/constants';
 import { saveAnswer, saveQuestion } from '../../utils/api';
-import { addAnswerToUser } from '../users/usersActions';
+import { addAnswerToUser } from '../users/usersactions';
 
 export function receiveQuestions(questions) {
     return {

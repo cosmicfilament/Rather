@@ -1,3 +1,10 @@
+'use strict';
+
+/**
+    * @file simple function that says Hi [user]
+    * @author John Butler
+*/
+
 import React from 'react';
 
 const Greeting = ({ name }) => {

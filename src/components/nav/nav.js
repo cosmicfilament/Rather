@@ -1,12 +1,19 @@
+'use strict';
+
+/**
+    * @file navigation menu
+    * @author John Butler
+*/
+
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
-import Avatar from './navAvatar';
+import Avatar from './navavatar';
 import Greeting from './greeting';
 import { FaBars } from 'react-icons/fa';
-import { handleLogout } from '../../store/auth/authActions';
+import { handleLogout } from '../../store/auth/authactions';
 import '../../styles/index.scss';
 import { LOGIN_SIZE_GOING_MOBILE } from '../../utils/constants';
 
@@ -88,14 +95,14 @@ class Nav extends Component {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to='/new'
+                            <NavLink to='/add'
                                 className='inactive'
                                 activeClassName='active'>
                                 New Question
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to='/leader'
+                            <NavLink to='/leaderboard'
                                 className='inactive'
                                 activeClassName='active'>
                                 LeaderBoard

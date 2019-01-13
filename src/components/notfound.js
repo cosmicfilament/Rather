@@ -1,3 +1,10 @@
+'use strict';
+
+/**
+    * @file 404 not found implementation
+    * @author John Butler
+*/
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';

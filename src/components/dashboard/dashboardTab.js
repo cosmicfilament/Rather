@@ -1,3 +1,10 @@
+'use strict';
+
+/**
+    * @file handles tab selection and display for the dashboard
+    * @author John Butler
+*/
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';

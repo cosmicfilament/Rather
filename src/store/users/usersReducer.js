@@ -1,3 +1,10 @@
+'use strict';
+
+/**
+    * @file user object redux reducer function
+    * @author John Butler
+*/
+
 import { RECEIVE_USERS, ADD_ANSWER, ADD_QUESTION } from '../../utils/constants';
 
 export default function users(state = {}, action) {

@@ -1,4 +1,9 @@
-"use strict";
+'use strict';
+
+/**
+    * @file Production specific webpack code
+    * @author John Butler
+*/
 
 const merge = require('webpack-merge');
 const common = require('./webpack.common.config');

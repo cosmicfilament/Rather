@@ -1,6 +1,13 @@
+'use strict';
+
+/**
+    * @file main dialog that is shown on login wraps the 2 tabs that break up the questions into unanswered and answered
+    * @author John Butler
+*/
+
 import React, { Component } from 'react';
-import DashboardTab from './dashboardTab';
-import DashboardList from './dashboardList';
+import DashboardTab from './dashboardtab';
+import DashboardList from './dashboardlist';
 import '../../styles/index.scss';
 
 import {

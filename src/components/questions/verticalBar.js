@@ -1,3 +1,10 @@
+'use strict';
+
+/**
+    * @file vertical bar like <hr> only vertical
+    * @author John Butler
+*/
+
 import React from 'react';
 
 const VerticalBar = ({ }) => {

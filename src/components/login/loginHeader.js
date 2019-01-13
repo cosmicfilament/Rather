@@ -1,3 +1,10 @@
+'use strict';
+
+/**
+    * @file displays some text on the login dialog
+    * @author John Butler
+*/
+
 import React from 'react';
 
 

@@ -4,11 +4,16 @@
 ## Installation:
 You need to have  node.js and npm installed in order to run the app. Then, clone or download the files from the github repository to the directory you wish to use. Open the project and run npm install to get all of the dependencies.
 
-Currently the app defaults to starting on localhost and port 3000. But, you can go int webpack.dev.config.js and change the hostname and port variables to the ip address of your computer and the port to the port you want to use if different from port 3000. If you put a valid ip address in then you can test it on a phone and or tablet, too.
+To start the app type npm start from the command line.
+
+Currently the app defaults to starting on localhost and port 3000. But, you can go to webpack.dev.config.js and change the hostname and port variables to the ip address of your computer and the port to the port you want to use if different from port 3000. If you put a valid ip address in then you can test it on a phone and or tablet, too.
 
 There are 3 logins that can be used to test the app:
-jpbutler/password1243
-sarahedo/password1243
+
+jpbutler/password123
+
+sarahedo/password123
+
 tylermcginnis/password123
 
 ## Details:

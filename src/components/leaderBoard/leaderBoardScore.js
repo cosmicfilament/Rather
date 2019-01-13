@@ -1,3 +1,10 @@
+'use strict';
+
+/**
+    * @file score display for an individual leaderboard card
+    * @author John Butler
+*/
+
 import React, { Fragment } from 'react';
 
 const LeaderBoardScore = ({ score }) => {

@@ -1,3 +1,10 @@
+'use strict';
+
+/**
+    * @file top horizontal section of the new question dialog
+    * @author John Butler
+*/
+
 import React from 'react';
 
 const NewQuestionHeader = () => {

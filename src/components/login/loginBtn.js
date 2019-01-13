@@ -1,3 +1,10 @@
+'use strict';
+
+/**
+    * @file login submit button
+    * @author John Butler
+*/
+
 import React from 'react';
 
 const LoginBtn = ({ onHandleSubmit }) => {

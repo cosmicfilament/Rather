@@ -1,10 +1,17 @@
+'use strict';
+
+/**
+    * @file wraps the answer logic vice results
+    * @author John Butler
+*/
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { handleAnswerQuestion }
-    from '../../store/questions/questionsActions';
-import SubmitAnswerButton from './answerButton';
+    from '../../store/questions/questionsactions';
+import SubmitAnswerButton from './answerbutton';
 
 class Options extends Component {
 
@@ -22,7 +29,7 @@ class Options extends Component {
             answer
         }));
 
-        this.props.history.push(`/results/${question.id}`);
+        this.props.history.push(`/question/${question.id}`);
     }
 
     handleOptionChanged = (e) => {

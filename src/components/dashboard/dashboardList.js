@@ -1,7 +1,14 @@
+'use strict';
+
+/**
+    * @file iterates through the list of questions and displays them on a tab
+    * @author John Butler
+*/
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Questions from '../questions/questionsContainer';
+import Questions from '../questions/questionscontainer';
 import { withRouter } from 'react-router-dom';
 import { TAB_LEFT } from '../../utils/constants';
 

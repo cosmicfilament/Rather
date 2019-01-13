@@ -1,3 +1,10 @@
+'use strict';
+
+/**
+    * @file user's avatar
+    * @author John Butler
+*/
+
 import React, { Fragment } from 'react';
 
 const Avatar = ({ url }) => {

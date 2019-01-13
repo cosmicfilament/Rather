@@ -1,3 +1,10 @@
+'use strict';
+
+/**
+    * @file button that submits the answer
+    * @author John Butler
+*/
+
 import React from 'react';
 
 const SubmitAnswerButton = ({ onSubmitAnswer }) => {

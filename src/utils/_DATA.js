@@ -1,9 +1,8 @@
 'use strict';
 
 /**
-  * @file
-  * @module
-  * @exports
+  * @file simulated server functionality
+  * @author John Butler
 */
 
 const _server = {};

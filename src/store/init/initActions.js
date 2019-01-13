@@ -1,7 +1,14 @@
+'use strict';
+
+/**
+    * @file redux action called by app.js for initial load
+    * @author John Butler
+*/
+
 import { getInitialData } from '../../utils/api';
-import { receiveUsers } from '../users/usersActions';
-import { receiveQuestions } from '../questions/questionsActions';
-import { setAuthUser, setAuthUserUI } from '../auth/authActions';
+import { receiveUsers } from '../users/usersactions';
+import { receiveQuestions } from '../questions/questionsactions';
+import { setAuthUser, setAuthUserUI } from '../auth/authactions';
 
 export function handleInitialData() {
     return (dispatch) => {

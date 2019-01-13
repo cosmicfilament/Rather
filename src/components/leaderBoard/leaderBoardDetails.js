@@ -1,3 +1,10 @@
+'use strict';
+
+/**
+    * @file displays how many answered and how many the user created for an individual card
+    * @author John Butler
+*/
+
 import React, { Fragment } from 'react';
 
 const LeaderBoardDetails = ({ name, answered, created }) => {

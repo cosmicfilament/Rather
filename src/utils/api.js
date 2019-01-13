@@ -1,5 +1,10 @@
 'use strict';
-//@ToDo: add loading
+
+/**
+    * @file client interface to the server
+    * @author John Butler
+*/
+
 
 import server from './_DATA';
 import helpers from './helpers';

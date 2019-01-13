@@ -1,8 +1,15 @@
+'use strict';
+
+/**
+    * @file called by dashboardlist for each question object. Wraps the question and answer functionality which is a function of which tab was selected.
+    * @author John Butler
+*/
+
 import React, { Component } from 'react';
-import VerticalBar from './verticalBar';
-import Avatar from './questionsAvatar';
-import Options from './questionsOptions';
-import PollButton from './PollButton';
+import VerticalBar from './verticalbar';
+import Avatar from './questionsavatar';
+import Options from './questionsoptions';
+import PollButton from './pollbutton';
 
 import {
     TAB_LEFT
@@ -18,7 +25,7 @@ class Questions extends Component {
         const { side, item, user } = this.props;
         const { link, linkText } = (side === TAB_LEFT) ?
             { link: '/question', linkText: 'Submit Answer' } :
-            { link: '/results', linkText: 'View Results' };
+            { link: '/question', linkText: 'View Results' };
 
         return (
             <div className='question-wrapper' >

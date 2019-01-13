@@ -1,6 +1,13 @@
+'use strict';
+
+/**
+    * @file main entry point when the new question menu item is selected
+    * @author John Butler
+*/
+
 import React, { Component } from 'react';
-import NewQuestionHeader from './newQuestionHeader';
-import NewQuestionForm from './newQuestionForm';
+import NewQuestionHeader from './newquestionheader';
+import NewQuestionForm from './newquestionform';
 
 class NewQuestionContainer extends Component {
 
