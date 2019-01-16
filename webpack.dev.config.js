@@ -17,7 +17,7 @@ const WebpackBar = require('webpackbar');
 // be able to connect I am using an ip address vice localhost
 // this could all be done in the package.json but this is easier
 const hostname = 'localhost';
-const port = '3000';
+const port = 3000;
 
 console.log(`Connecting to: [http://${hostname}:${port}]`);
 

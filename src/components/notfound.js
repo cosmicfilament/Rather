@@ -28,7 +28,7 @@ class NotFound extends Component {
                 <div className='poll-button-wrapper' >
                     <Link to={'/'}>
                         <button className='question-poll-button'
-                            onClick={(e) => onHomeSelected('/')}>
+                            onClick={(e) => this.onHomeSelected}>
                             Home
                         </button>
                     </Link>
@@ -38,4 +38,5 @@ class NotFound extends Component {
     };
 }
 
+// @ts-ignore
 export default withRouter(connect()(NotFound));

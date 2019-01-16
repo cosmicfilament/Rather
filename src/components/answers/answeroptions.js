@@ -86,4 +86,5 @@ Options.defaultProps = {
     question: {}
 };
 
+// @ts-ignore
 export default withRouter(connect()(Options));

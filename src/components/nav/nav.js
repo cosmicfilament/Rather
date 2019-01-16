@@ -138,4 +138,5 @@ Nav.defaultProps = {
     avatarURL: ''
 };
 
+// @ts-ignore
 export default withRouter(connect()(Nav));

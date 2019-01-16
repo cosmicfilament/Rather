@@ -5,7 +5,7 @@
     * @author John Butler
 */
 
-import { SET_AUTH_USER, SET_AUTH_USER_TOKEN } from '../../utils/constants';
+import { SET_AUTH_USER } from '../../utils/constants';
 import { getUser, getNewToken } from '../../utils/api';
 import { LOGIN_FAILED_TOKEN, LOGIN_DEFAULT_TOKEN } from '../../utils/constants';
 import helpers from '../../utils/helpers';

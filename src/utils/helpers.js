@@ -5,7 +5,7 @@
     * @author John Butler
 */
 
-import { LOGIN_FAILED_TOKEN } from './constants';
+import { LOGIN_DEFAULT_TOKEN } from './constants';
 
 const helpers = {};
 export default helpers;
@@ -17,7 +17,7 @@ helpers.saveToLocalStorage = (obj) => {
         localStorage.setItem('token', strObj);
     }
     catch (error) {
-        console.log(`Failed to save to localStorage : ${strObj}.`);
+        console.log('Failed to save to localStorage.');
     }
 };
 
@@ -28,7 +28,7 @@ helpers.getFromLocalStorage = () => {
         return JSON.parse(result);
     }
     catch (error) {
-        console.log(`Failed to retrieve from localStorage item : ${result}.`);
+        console.log('Failed to retrieve from localStorage item');
         return LOGIN_DEFAULT_TOKEN;
     }
 };

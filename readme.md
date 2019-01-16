@@ -1,7 +1,9 @@
 # Would You Rather Game - Second project in the Udacity React Redux Course
-#### John Butler - React Redux project
 
-## Installation:
+John Butler - React Redux project
+
+## Installation
+
 You need to have  node.js and npm installed in order to run the app. Then, clone or download the files from the github repository to the directory you wish to use. Open the project and run npm install to get all of the dependencies.
 
 To start the app type npm start from the command line.
@@ -16,10 +18,10 @@ sarahedo/password123
 
 tylermcginnis/password123
 
-## Details:
+## Details
+
 Rather is a "Would You Rather" game demo that works equally well on any size device by utilizing response web design principles.
 You can answer questions and create new questions as well as see your score on the leaderboard. But, when you logout of the app all of your data and stats are lost as it does not save to a real database.
-
 
 While logged in it simulates getting a token from the server that is good for 30 minutes so if you close the app without logging out first, you should be able to start right back up without re-logging in.
 
